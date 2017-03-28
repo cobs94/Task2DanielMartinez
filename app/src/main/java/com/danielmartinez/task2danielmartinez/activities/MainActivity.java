@@ -1,5 +1,6 @@
 package com.danielmartinez.task2danielmartinez.activities;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.danielmartinez.task2danielmartinez.Preferencias;
 import com.danielmartinez.task2danielmartinez.R;
 import com.danielmartinez.task2danielmartinez.fragments.AjustesFragment;
 import com.danielmartinez.task2danielmartinez.fragments.DescripcionFragment;
@@ -80,7 +82,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fm.beginTransaction().replace(R.id.container, fragment6).commit();
                 break;
             case R.id.item7:
-
+                Preferencias preferencias = new Preferencias(MainActivity.this);
+                preferencias.setLogin(false);
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
                 break;
         }
         item.setChecked(true);
