@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Task2DanielMartinez</string>
+    <string name="introducirNick">Introduce tu nickname</string>
+    <string name="introducirContraseña">Introduce tu contraseña</string>
+    <string name="iniciarSesion">Iniciar sesión</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="introducirNombre">Introduce tu nombre</string>
+    <string name="introducirCorreo">Introduce tu correo</string>
+    <string name="introducirApellidos">Introduce tu apellido</string>
+    <string name="confirmarCorreo">Confirma tu correo</string>
+    <string name="confirmarContraseña">Confirma tu contraseña</string>
+    <string name="perfil">Perfil</string>
+    <string name="descripción">Descripción</string>
+    <string name="personajes">Personajes</string>
+    <string name="objetos">Objetos</string>
+    <string name="tips">Tips</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="cerrarSesion">Cerrar sesión</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="version">0.5v</string>
+    <string name="infoDesarrollador">Yo</string>
+    <string name="contacto">654327946</string>
+    <string name="nombrePers">Personaje 1</string>
+    <string name="nombreObjeto">Objeto</string>
+    <string name="nombreTip">Tip</string>
+</resources>
