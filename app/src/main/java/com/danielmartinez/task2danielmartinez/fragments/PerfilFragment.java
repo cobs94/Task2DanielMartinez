@@ -22,15 +22,18 @@ public class PerfilFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_perfil, container, false);
-        txtNombre = (TextView) rootView.findViewById(R.id.editNombre);
-        txtApellido = (TextView) rootView.findViewById(R.id.editApellido);
-        txtNickName = (TextView) rootView.findViewById(R.id.editNickname);
-        txtEmail = (TextView) rootView.findViewById(R.id.editEmail);
+        txtNombre = (TextView) rootView.findViewById(R.id.txtNombre);
+        txtApellido = (TextView) rootView.findViewById(R.id.txtApellido);
+        txtNickName = (TextView) rootView.findViewById(R.id.txtNickName);
+        txtEmail = (TextView) rootView.findViewById(R.id.txtEmail);
 
-
+        Preferencias preferencias = new Preferencias(getActivity());
         UsuarioBean usuarioBean = preferencias.getUsuario();
 
-        txtNombre.setText();
+        txtNombre.setText("Nombre: " + usuarioBean.getNombre());
+        txtApellido.setText("Apellido: " + usuarioBean.getApellido());
+        txtEmail.setText("Email: " +  usuarioBean.getEmail());
+        txtNickName.setText("Nick: " + usuarioBean.getNick());
         return rootView;
     }
 

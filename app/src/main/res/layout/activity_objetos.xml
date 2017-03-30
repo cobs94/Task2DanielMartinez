@@ -11,14 +11,16 @@
     tools:context="com.danielmartinez.task2danielmartinez.activities.ObjetosActivity"
     android:orientation="vertical">
 
-    <TextView
+    <TextView android:id="@+id/txtNombre"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/nombreObjeto"/>
+        android:layout_height="wrap_content" />
 
-    <TextView
+    <TextView android:id="@+id/txtDescripcion"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Descripcion"/>
+        android:layout_height="wrap_content" />
+
+    <ImageView android:id="@+id/imgObjeto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
