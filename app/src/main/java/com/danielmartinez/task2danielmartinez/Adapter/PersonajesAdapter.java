@@ -8,7 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.danielmartinez.task2danielmartinez.R;
-import com.danielmartinez.task2danielmartinez.bean.ObjetosBean;
 import com.danielmartinez.task2danielmartinez.bean.PersonajesBean;
 
 import java.util.List;
