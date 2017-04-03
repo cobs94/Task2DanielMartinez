@@ -31,4 +31,18 @@
         android:textSize="20dp"
         android:layout_margin="5dp"/>
 
+    <ImageView android:id="@+id/imgPerfil"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"/>
+
+    <Button android:id="@+id/btnCambiarImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/imagenPerfil"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"/>
+
+
+
 </LinearLayout>

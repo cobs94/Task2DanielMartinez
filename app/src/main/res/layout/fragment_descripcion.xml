@@ -11,12 +11,12 @@
         android:layout_height="wrap_content"
         android:textSize="30dp"
         android:textAlignment="center"
-        android:text="Mi super juego de las naves" />
+        android:text="@string/Titulo" />
 
     <TextView android:id="@+id/txtDescripcion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Juego de naves 2D super divertido."
+        android:text="@string/Descripcion"
         android:layout_marginTop="20dp"/>
 
     <Button android:id="@+id/btnCompartir"

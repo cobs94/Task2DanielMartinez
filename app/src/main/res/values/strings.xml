@@ -26,4 +26,7 @@
     <string name="nombreObjeto">Objeto</string>
     <string name="nombreTip">Tip</string>
     <string name="compartir">Compartir</string>
+    <string name="imagenPerfil">Cambiar imagen de perfil</string>
+    <string name="Titulo">Mi super juego de naves</string>
+    <string name="Descripcion">Juego de naves en 2D superdivertido</string>
 </resources>
