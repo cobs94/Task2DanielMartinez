@@ -11,13 +11,23 @@
     tools:context="com.danielmartinez.task2danielmartinez.activities.PersonajesActivity"
     android:orientation="vertical">
 
-    <TextView
+    <TextView android:id="@+id/txtNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/nombrePers"/>
+        android:textSize="30dp"/>
 
-    <TextView
+    <TextView android:id="@+id/txtDescripcion"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView android:id="@+id/imgPers"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <Button android:id="@+id/btnCompartir"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Descripcion"/>
+        android:text="@string/compartir"
+        android:layout_gravity="center"
+        android:layout_margin="50dp"/>
 </LinearLayout>

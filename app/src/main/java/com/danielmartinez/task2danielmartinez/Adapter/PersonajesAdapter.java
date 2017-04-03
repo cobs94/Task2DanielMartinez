@@ -1,10 +1,12 @@
 package com.danielmartinez.task2danielmartinez.Adapter;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.danielmartinez.task2danielmartinez.R;
@@ -40,6 +42,7 @@ public class PersonajesAdapter extends ArrayAdapter<PersonajesBean>{
             viewHolder = new ViewHolder();
             item = layaoutInflater.from(context).inflate(resource,null);
             viewHolder.txtNombre = (TextView) item.findViewById(R.id.txtNombre);
+            viewHolder.imgImagen = (ImageView) item.findViewById(R.id.imgImagen);
 
             item.setTag(viewHolder);
         }else{
@@ -48,10 +51,12 @@ public class PersonajesAdapter extends ArrayAdapter<PersonajesBean>{
 
         PersonajesBean personaje = objects.get(position);
         viewHolder.txtNombre.setText(personaje.getNombre());
+        viewHolder.imgImagen.setImageDrawable(ContextCompat.getDrawable(context, personaje.getFoto()));
         return item;
     }
 
     class ViewHolder{
         TextView txtNombre;
+        ImageView imgImagen;
     }
 }

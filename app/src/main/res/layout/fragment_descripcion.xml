@@ -9,14 +9,21 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:textAlignment="center"
         android:text="Mi super juego de las naves" />
 
-    <TextView
+    <TextView android:id="@+id/txtDescripcion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Juego de naves 2D super divertido."
         android:layout_marginTop="20dp"/>
+
+    <Button android:id="@+id/btnCompartir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/compartir"
+        android:layout_gravity="center"
+        android:layout_margin="50dp"/>
 
 </LinearLayout>

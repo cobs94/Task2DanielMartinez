@@ -7,14 +7,13 @@ import java.io.Serializable;
  */
 
 public class TipsBean implements Serializable{
-    public String nombre, descripcion, foto;
+    public String nombre, descripcion;
 
     public TipsBean() {
     }
 
-    public TipsBean(String descripcion, String foto, String nombre) {
+    public TipsBean(String descripcion, String nombre) {
         this.descripcion = descripcion;
-        this.foto = foto;
         this.nombre = nombre;
     }
 
@@ -24,14 +23,6 @@ public class TipsBean implements Serializable{
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
     }
 
     public String getNombre() {

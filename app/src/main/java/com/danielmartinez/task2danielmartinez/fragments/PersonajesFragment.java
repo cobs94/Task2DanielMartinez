@@ -29,7 +29,7 @@ public class PersonajesFragment extends Fragment implements AdapterView.OnItemCl
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_objetos, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_personajes, container, false);
 
         lstPersonajes = (ListView) rootView.findViewById(R.id.lstPersonajes);
 
@@ -41,7 +41,9 @@ public class PersonajesFragment extends Fragment implements AdapterView.OnItemCl
         lstPersonajes.setOnItemClickListener(this);
 
 
-        personajes.add(new PersonajesBean("nave protagonista la Heart of gold", R.drawable.nave1, "nave1"));
+        personajes.add(new PersonajesBean("Esta nave fue creada en secreto en el planeta Damogran, es la primera en utilizar el motor de Improbabilidad Infinita, el día de su presentación es secuestrada por el presidente de la galaxia Zaphod Beeblebrox. ", R.drawable.nave1, "Heart Of Gold"));
+        personajes.add(new PersonajesBean("En el año 2047, se capta desde la Tierra una señal de la nave espacial Event Horizon, desaparecida sin dejar rastro, más allá de Neptuno en 2040. Su pérdida había sido considerada el peor desastre espacial de la historia.  ", R.drawable.nave2, "Event Horizon"));
+        personajes.add(new PersonajesBean("Esta simplemente es una nave que no se puede describir, capaz de viajar a través del tiempo y el espacio, soportar temperaturas tan altas como el Sol y tan bajas como el centro de Titan. ", R.drawable.nave3, "HippieVan3000"));
         return rootView;
     }
 

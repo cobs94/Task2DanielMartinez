@@ -40,7 +40,9 @@ public class ObjetosFragment extends Fragment implements AdapterView.OnItemClick
         lstObjetos.setOnItemClickListener(this);
 
 
-        objetos.add(new ObjetosBean("nave protagonista la Heart of gold", R.drawable.nave1, "nave1"));
+        objetos.add(new ObjetosBean("Kit de reparacion, repara la nave si esta esta dañada", R.drawable.kit, "Kit de reparacion"));
+        objetos.add(new ObjetosBean("Doble disparo, disparas dos balas en vez de una", R.drawable.disparodoble, "Doble disparo"));
+        objetos.add(new ObjetosBean("Escudo que te proteje del siguiente ataque", R.drawable.escudo, "Escudo"));
         return rootView;
     }
 

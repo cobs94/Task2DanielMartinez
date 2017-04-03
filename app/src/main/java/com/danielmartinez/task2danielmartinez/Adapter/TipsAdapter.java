@@ -1,7 +1,6 @@
 package com.danielmartinez.task2danielmartinez.Adapter;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.danielmartinez.task2danielmartinez.R;
-import com.danielmartinez.task2danielmartinez.bean.ObjetosBean;
 import com.danielmartinez.task2danielmartinez.bean.TipsBean;
 
 import java.util.List;
@@ -19,12 +17,12 @@ import java.util.List;
 /**
  * Created by ALUMNOS on 30/03/2017.
  */
-public class ObjetosAdapter extends ArrayAdapter<ObjetosBean>{
+public class TipsAdapter extends ArrayAdapter<TipsBean>{
 
     private Context context;
     private int resource;
-    private List<ObjetosBean> objects;
-    public ObjetosAdapter(Context context, int resource, List<ObjetosBean> objects) {
+    private List<TipsBean> objects;
+    public TipsAdapter(Context context, int resource, List<TipsBean> objects) {
         super(context, resource, objects);
 
         this.context = context;
@@ -44,21 +42,18 @@ public class ObjetosAdapter extends ArrayAdapter<ObjetosBean>{
             viewHolder = new ViewHolder();
             item = layaoutInflater.from(context).inflate(resource,null);
             viewHolder.txtNombre = (TextView) item.findViewById(R.id.txtNombre);
-            viewHolder.imgImagen = (ImageView) item.findViewById(R.id.imgImagen);
 
             item.setTag(viewHolder);
         }else{
             viewHolder = (ViewHolder) item.getTag();
         }
 
-        ObjetosBean objeto = objects.get(position);
-        viewHolder.txtNombre.setText(objeto.getNombre());
-        viewHolder.imgImagen.setImageDrawable(ContextCompat.getDrawable(context, objeto.getFoto()));
+        TipsBean tip = objects.get(position);
+        viewHolder.txtNombre.setText(tip.getNombre());
         return item;
     }
 
     class ViewHolder{
         TextView txtNombre;
-        ImageView imgImagen;
     }
 }

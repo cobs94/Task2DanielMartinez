@@ -25,4 +25,5 @@
     <string name="nombrePers">Personaje 1</string>
     <string name="nombreObjeto">Objeto</string>
     <string name="nombreTip">Tip</string>
+    <string name="compartir">Compartir</string>
 </resources>
