@@ -29,4 +29,10 @@
     <string name="imagenPerfil">Cambiar imagen de perfil</string>
     <string name="Titulo">Mi super juego de naves</string>
     <string name="Descripcion">Juego de naves en 2D superdivertido</string>
+    <string name="datosIncorrectos">Datos Incorrectos</string>
+    <string name="noUsuario">No existe el usuario</string>
+    <string name="emailIncorrecto">El email es incorrecto</string>
+    <string name="registro">Te has registrado correctamente</string>
+    <string name="contrasenas">Las contraseñas no coinciden</string>
+    <string name="datosObligatorios">Todos los datos son obligatorios</string>
 </resources>

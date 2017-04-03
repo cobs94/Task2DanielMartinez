@@ -54,19 +54,19 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
                     Preferencias preferencias = new Preferencias(RegistroActivity.this);
                     preferencias.setUsuario(usuarioBean);
 
-                    Toast.makeText(RegistroActivity.this, "Te has registrado correctamente", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegistroActivity.this, R.string.registro, Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(RegistroActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
                 }else {
-                    Toast.makeText(RegistroActivity.this, "Las contraseñas no son iguales", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegistroActivity.this, R.string.contrasenas, Toast.LENGTH_SHORT).show();
                 }
             }else{
-                Toast.makeText(RegistroActivity.this, "El email no es correcto", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegistroActivity.this, R.string.emailIncorrecto, Toast.LENGTH_SHORT).show();
             }
         }else{
-            Toast.makeText(RegistroActivity.this, "Todos los datos son obligatorios", Toast.LENGTH_SHORT).show();
+            Toast.makeText(RegistroActivity.this, R.string.datosObligatorios, Toast.LENGTH_SHORT).show();
         }
     }
 }

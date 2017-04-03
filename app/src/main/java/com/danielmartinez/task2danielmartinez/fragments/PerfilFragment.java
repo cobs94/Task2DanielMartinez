@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +59,11 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
 
         btnCambiarImagen.setOnClickListener(this);
 
+        if(usuarioBean.getImgPerfil() != null && !usuarioBean.getImgPerfil().isEmpty()){
+            Uri path = Uri.parse(usuarioBean.getImgPerfil());
+
+            imgPerfil.setImageURI(path);
+        }
 
         return rootView;
     }
@@ -78,21 +84,15 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode == Activity.RESULT_OK){
             Uri path = data.getData();
+
+            Log.d("PerfilFragment","URI: "+path.toString());
             imgPerfil.setImageURI(path);
 
             Preferencias preferencias = new Preferencias(getActivity());
             UsuarioBean usuarioBean = preferencias.getUsuario();
 
             usuarioBean.setImgPerfil(path.toString());
-
-            Bitmap bitmap = null;
-            try{
-                bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), path);
-
-                imgPerfil.setImageBitmap(bitmap);
-            }catch (IOException e){
-                e.printStackTrace();
-            }
+            preferencias.setUsuario(usuarioBean);
         }
     }
 }
