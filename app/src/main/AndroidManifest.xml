@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.danielmartinez.task2danielmartinez">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -21,7 +21,8 @@
         <activity android:name=".activities.MainActivity" />
         <activity android:name=".activities.PersonajesActivity" />
         <activity android:name=".activities.ObjetosActivity" />
-        <activity android:name=".activities.TipActivity"></activity>
+        <activity android:name=".activities.TipActivity" />
+        <activity android:name=".activities.CambioDatosActivity"></activity>
     </application>
 
 </manifest>

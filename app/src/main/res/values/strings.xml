@@ -35,4 +35,11 @@
     <string name="registro">Te has registrado correctamente</string>
     <string name="contrasenas">Las contraseñas no coinciden</string>
     <string name="datosObligatorios">Todos los datos son obligatorios</string>
+    <string name="nuevoNombre">Nuevo nombre</string>
+    <string name="nuevoApellido">Nuevo apellido</string>
+    <string name="nuevoNick">Nuevo Nick</string>
+    <string name="nuevoEmail">Nuevo email</string>
+    <string name="nuevaPass">Nueva contraseña</string>
+    <string name="cambiarDatos">Cambiar datos</string>
+    <string name="nuevosDatos">Introducir nuevos datos</string>
 </resources>

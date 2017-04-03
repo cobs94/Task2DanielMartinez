@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.danielmartinez.task2danielmartinez.Preferencias;
 import com.danielmartinez.task2danielmartinez.R;
+import com.danielmartinez.task2danielmartinez.activities.CambioDatosActivity;
 import com.danielmartinez.task2danielmartinez.activities.LoginActivity;
 import com.danielmartinez.task2danielmartinez.bean.UsuarioBean;
 
@@ -33,8 +34,11 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
     private String TEMPORAL_PICTURE_NAME = "temporal.jpg";
 
     private final int SELECT_PICTURE = 200;
+    private final int CHANGE_DATA = 100;
+
     private ImageView imgPerfil;
     private Button btnCambiarImagen;
+    private Button btnCambiarDatos;
 
 
     @Override
@@ -48,6 +52,7 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
         txtEmail = (TextView) rootView.findViewById(R.id.txtEmail);
         imgPerfil = (ImageView) rootView.findViewById(R.id.imgPerfil);
         btnCambiarImagen = (Button) rootView.findViewById(R.id.btnCambiarImg);
+        btnCambiarDatos = (Button) rootView.findViewById(R.id.btnCambiarDatos);
 
         Preferencias preferencias = new Preferencias(getActivity());
         UsuarioBean usuarioBean = preferencias.getUsuario();
@@ -58,6 +63,7 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
         txtNickName.setText("Nick: " + usuarioBean.getNick());
 
         btnCambiarImagen.setOnClickListener(this);
+        btnCambiarDatos.setOnClickListener(this);
 
         if(usuarioBean.getImgPerfil() != null && !usuarioBean.getImgPerfil().isEmpty()){
             Uri path = Uri.parse(usuarioBean.getImgPerfil());
@@ -74,25 +80,45 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        intent.setType("image/*");
-        startActivityForResult(intent.createChooser(intent, "Selecciona app de imagen"), SELECT_PICTURE);
+        switch (view.getId()) {
+            case R.id.btnCambiarImg:
+                Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                intent.setType("image/*");
+                startActivityForResult(intent.createChooser(intent, "Selecciona app de imagen"), SELECT_PICTURE);
+                break;
+            case R.id.btnCambiarDatos:
+                Intent intent2 = new Intent(getActivity(), CambioDatosActivity.class);
+
+                startActivityForResult(intent2, CHANGE_DATA);
+
+
+        }
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode == Activity.RESULT_OK){
-            Uri path = data.getData();
+        if(requestCode == 200) {
+            if (resultCode == Activity.RESULT_OK) {
+                Uri path = data.getData();
 
-            Log.d("PerfilFragment","URI: "+path.toString());
-            imgPerfil.setImageURI(path);
+                imgPerfil.setImageURI(path);
 
-            Preferencias preferencias = new Preferencias(getActivity());
-            UsuarioBean usuarioBean = preferencias.getUsuario();
+                Preferencias preferencias = new Preferencias(getActivity());
+                UsuarioBean usuarioBean = preferencias.getUsuario();
 
-            usuarioBean.setImgPerfil(path.toString());
-            preferencias.setUsuario(usuarioBean);
+                usuarioBean.setImgPerfil(path.toString());
+                preferencias.setUsuario(usuarioBean);
+            }
+        }else{
+            if (resultCode == Activity.RESULT_OK) {
+                UsuarioBean nuevousuario = (UsuarioBean) data.getSerializableExtra("DATOS_KEY");
+
+                Preferencias preferencias = new Preferencias(getActivity());
+                UsuarioBean usuarioBean = preferencias.getUsuario();
+
+                usuarioBean = nuevousuario;
+            }
         }
     }
 }

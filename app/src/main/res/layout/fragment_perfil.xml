@@ -43,13 +43,10 @@
         android:layout_gravity="center"
         android:layout_margin="5dp"/>
 
-    <Button android:id="@+id/btnCambiarImg"
+    <Button android:id="@+id/btnCambiarDatos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/imagenPerfil"
+        android:text="@string/cambiarDatos"
         android:layout_gravity="center"
         android:layout_margin="5dp"/>
-
-
-
 </LinearLayout>
