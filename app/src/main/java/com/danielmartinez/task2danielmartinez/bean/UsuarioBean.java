@@ -20,7 +20,11 @@ public class UsuarioBean implements Serializable{
         this.pass = pass;
     }
 
+    public UsuarioBean(UsuarioBean usuario) {
+    }
+
     public UsuarioBean() {
+
     }
 
     public String getApellido() {

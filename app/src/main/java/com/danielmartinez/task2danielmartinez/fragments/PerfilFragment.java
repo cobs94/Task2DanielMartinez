@@ -117,7 +117,13 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
                 Preferencias preferencias = new Preferencias(getActivity());
                 UsuarioBean usuarioBean = preferencias.getUsuario();
 
-                usuarioBean = nuevousuario;
+                usuarioBean.setNombre(nuevousuario.getNombre());
+                usuarioBean.setApellido(nuevousuario.getApellido());
+                usuarioBean.setEmail(nuevousuario.getEmail());
+                usuarioBean.setNick(nuevousuario.getNick());
+                usuarioBean.setPass(nuevousuario.getPass());
+
+                preferencias.setUsuario(usuarioBean);
             }
         }
     }

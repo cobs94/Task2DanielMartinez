@@ -34,6 +34,18 @@ public class CambioDatosActivity extends AppCompatActivity implements View.OnCli
         btnCambiarDatos = (Button) findViewById(R.id.btnCambiarDatos);
 
         btnCambiarDatos.setOnClickListener(this);
+
+        Preferencias preferencias = new Preferencias(CambioDatosActivity.this);
+        UsuarioBean usuarioBean = preferencias.getUsuario();
+
+        editNombre.setText(usuarioBean.getNombre());
+        editApellido.setText(usuarioBean.getApellido());
+        editNick.setText(usuarioBean.getNick());
+        editEmail.setText(usuarioBean.getEmail());
+        editPass.setText(usuarioBean.getPass());
+        editPass2.setText(usuarioBean.getPass2());
+
+        btnCambiarDatos = (Button) findViewById(R.id.btnCambiarDatos);
     }
 
     @Override
@@ -49,9 +61,19 @@ public class CambioDatosActivity extends AppCompatActivity implements View.OnCli
                 !email.isEmpty() && !nombre.isEmpty() && !apellido.isEmpty() && !pass.isEmpty() && !pass2.isEmpty() && !nick.isEmpty()) {
             if(Utils.isEmail(email)) {
                 if(pass.equals(pass2)) {
-                    UsuarioBean usuarioBean = new UsuarioBean(apellido, email, nick, nombre, pass2, pass);
 
                     Preferencias preferencias = new Preferencias(CambioDatosActivity.this);
+                    UsuarioBean usuarioBean = preferencias.getUsuario();
+
+                    UsuarioBean nuevousuario = new UsuarioBean(apellido, email, nick, nombre, pass2, pass);
+
+
+                    usuarioBean.setNombre(nuevousuario.getNombre());
+                    usuarioBean.setApellido(nuevousuario.getApellido());
+                    usuarioBean.setEmail(nuevousuario.getEmail());
+                    usuarioBean.setNick(nuevousuario.getNick());
+                    usuarioBean.setPass(nuevousuario.getPass());
+
                     preferencias.setUsuario(usuarioBean);
 
                     Toast.makeText(CambioDatosActivity.this, R.string.registro, Toast.LENGTH_SHORT).show();
