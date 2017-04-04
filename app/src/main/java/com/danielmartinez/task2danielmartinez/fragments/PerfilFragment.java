@@ -112,4 +112,17 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
             }
         }
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Preferencias preferencias = new Preferencias(getActivity());
+        UsuarioBean usuarioBean = preferencias.getUsuario();
+
+        txtNombre.setText("Nombre: " + usuarioBean.getNombre());
+        txtApellido.setText("Apellido: " + usuarioBean.getApellido());
+        txtEmail.setText("Email: " +  usuarioBean.getEmail());
+        txtNickName.setText("Nick: " + usuarioBean.getNick());
+
+    }
 }

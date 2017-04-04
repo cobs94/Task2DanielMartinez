@@ -78,9 +78,9 @@ public class CambioDatosActivity extends AppCompatActivity implements View.OnCli
                     preferencias.setUsuario(usuarioBean);
 
                     Toast.makeText(CambioDatosActivity.this, R.string.registro, Toast.LENGTH_SHORT).show();
-
+/*
                     Intent intent = new Intent(CambioDatosActivity.this, MainActivity.class);
-                    startActivity(intent);
+                    startActivity(intent);*/
                     finish();
 
                 }else {
