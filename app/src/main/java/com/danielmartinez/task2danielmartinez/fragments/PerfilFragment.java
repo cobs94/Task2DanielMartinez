@@ -89,7 +89,7 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
             case R.id.btnCambiarDatos:
                 Intent intent2 = new Intent(getActivity(), CambioDatosActivity.class);
 
-                startActivityForResult(intent2, CHANGE_DATA);
+                startActivity(intent2);
 
 
         }
@@ -108,21 +108,6 @@ public class PerfilFragment extends Fragment implements View.OnClickListener {
                 UsuarioBean usuarioBean = preferencias.getUsuario();
 
                 usuarioBean.setImgPerfil(path.toString());
-                preferencias.setUsuario(usuarioBean);
-            }
-        }else{
-            if (resultCode == Activity.RESULT_OK) {
-                UsuarioBean nuevousuario = (UsuarioBean) data.getSerializableExtra("DATOS_KEY");
-
-                Preferencias preferencias = new Preferencias(getActivity());
-                UsuarioBean usuarioBean = preferencias.getUsuario();
-
-                usuarioBean.setNombre(nuevousuario.getNombre());
-                usuarioBean.setApellido(nuevousuario.getApellido());
-                usuarioBean.setEmail(nuevousuario.getEmail());
-                usuarioBean.setNick(nuevousuario.getNick());
-                usuarioBean.setPass(nuevousuario.getPass());
-
                 preferencias.setUsuario(usuarioBean);
             }
         }

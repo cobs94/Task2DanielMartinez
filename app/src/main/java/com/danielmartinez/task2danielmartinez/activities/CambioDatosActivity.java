@@ -73,14 +73,14 @@ public class CambioDatosActivity extends AppCompatActivity implements View.OnCli
                     usuarioBean.setEmail(nuevousuario.getEmail());
                     usuarioBean.setNick(nuevousuario.getNick());
                     usuarioBean.setPass(nuevousuario.getPass());
+                    usuarioBean.setPass2(nuevousuario.getPass());
 
                     preferencias.setUsuario(usuarioBean);
 
                     Toast.makeText(CambioDatosActivity.this, R.string.registro, Toast.LENGTH_SHORT).show();
 
-                    Intent returnIntent = new Intent();
-                    returnIntent.putExtra("DATOS_KEY", usuarioBean);
-                    setResult(Activity.RESULT_OK,returnIntent);
+                    Intent intent = new Intent(CambioDatosActivity.this, MainActivity.class);
+                    startActivity(intent);
                     finish();
 
                 }else {
