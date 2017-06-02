@@ -10,19 +10,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.danielmartinez.task2danielmartinez.R;
-import com.danielmartinez.task2danielmartinez.bean.PersonajesBean;
+import com.danielmartinez.task2danielmartinez.bean.PersonajeBean;
 
 import java.util.List;
 
 /**
  * Created by ALUMNOS on 30/03/2017.
  */
-public class PersonajesAdapter extends ArrayAdapter<PersonajesBean>{
+public class PersonajesAdapter extends ArrayAdapter<PersonajeBean>{
 
     private Context context;
     private int resource;
-    private List<PersonajesBean> objects;
-    public PersonajesAdapter(Context context, int resource, List<PersonajesBean> objects) {
+    private List<PersonajeBean> objects;
+    public PersonajesAdapter(Context context, int resource, List<PersonajeBean> objects) {
         super(context, resource, objects);
 
         this.context = context;
@@ -49,7 +49,7 @@ public class PersonajesAdapter extends ArrayAdapter<PersonajesBean>{
             viewHolder = (ViewHolder) item.getTag();
         }
 
-        PersonajesBean personaje = objects.get(position);
+        PersonajeBean personaje = objects.get(position);
         viewHolder.txtNombre.setText(personaje.getNombre());
         viewHolder.imgImagen.setImageDrawable(ContextCompat.getDrawable(context, personaje.getFoto()));
         return item;

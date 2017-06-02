@@ -12,7 +12,7 @@ import android.widget.ListView;
 import com.danielmartinez.task2danielmartinez.Adapter.ObjetosAdapter;
 import com.danielmartinez.task2danielmartinez.R;
 import com.danielmartinez.task2danielmartinez.activities.ObjetosActivity;
-import com.danielmartinez.task2danielmartinez.bean.ObjetosBean;
+import com.danielmartinez.task2danielmartinez.bean.ObjetoBean;
 
 import java.util.ArrayList;
 
@@ -23,7 +23,7 @@ public class ObjetosFragment extends Fragment implements AdapterView.OnItemClick
     }
 
 
-    private ArrayList<ObjetosBean> objetos;
+    private ArrayList<ObjetoBean> objetos;
     private ListView lstObjetos;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,16 +39,17 @@ public class ObjetosFragment extends Fragment implements AdapterView.OnItemClick
         lstObjetos.setAdapter(adapter);
         lstObjetos.setOnItemClickListener(this);
 
-
-        objetos.add(new ObjetosBean("Kit de reparacion, repara la nave si esta esta dañada", R.drawable.kit, "Kit de reparacion"));
-        objetos.add(new ObjetosBean("Doble disparo, disparas dos balas en vez de una", R.drawable.disparodoble, "Doble disparo"));
-        objetos.add(new ObjetosBean("Escudo que te proteje del siguiente ataque", R.drawable.escudo, "Escudo"));
+/*
+        objetos.add(new ObjetoBean("Kit de reparacion, repara la nave si esta esta dañada", R.drawable.kit, "Kit de reparacion"));
+        objetos.add(new ObjetoBean("Doble disparo, disparas dos balas en vez de una", R.drawable.disparodoble, "Doble disparo"));
+        objetos.add(new ObjetoBean("Escudo que te protege del siguiente ataque", R.drawable.escudo, "Escudo"));*/
         return rootView;
+
     }
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int posicion, long l) {
-        ObjetosBean objetoBean = objetos.get(posicion);
+        ObjetoBean objetoBean = objetos.get(posicion);
 
         Intent intent = new Intent(getActivity(), ObjetosActivity.class);
         intent.putExtra("OBJETO_KEY", objetoBean);

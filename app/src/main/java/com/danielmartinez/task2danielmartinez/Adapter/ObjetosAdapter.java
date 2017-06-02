@@ -1,7 +1,6 @@
 package com.danielmartinez.task2danielmartinez.Adapter;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,20 +10,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.danielmartinez.task2danielmartinez.R;
-import com.danielmartinez.task2danielmartinez.bean.ObjetosBean;
-import com.danielmartinez.task2danielmartinez.bean.TipsBean;
+import com.danielmartinez.task2danielmartinez.bean.ObjetoBean;
 
 import java.util.List;
 
 /**
  * Created by ALUMNOS on 30/03/2017.
  */
-public class ObjetosAdapter extends ArrayAdapter<ObjetosBean>{
+public class ObjetosAdapter extends ArrayAdapter<ObjetoBean>{
 
     private Context context;
     private int resource;
-    private List<ObjetosBean> objects;
-    public ObjetosAdapter(Context context, int resource, List<ObjetosBean> objects) {
+    private List<ObjetoBean> objects;
+    public ObjetosAdapter(Context context, int resource, List<ObjetoBean> objects) {
         super(context, resource, objects);
 
         this.context = context;
@@ -51,7 +49,7 @@ public class ObjetosAdapter extends ArrayAdapter<ObjetosBean>{
             viewHolder = (ViewHolder) item.getTag();
         }
 
-        ObjetosBean objeto = objects.get(position);
+        ObjetoBean objeto = objects.get(position);
         viewHolder.txtNombre.setText(objeto.getNombre());
         viewHolder.imgImagen.setImageDrawable(ContextCompat.getDrawable(context, objeto.getFoto()));
         return item;

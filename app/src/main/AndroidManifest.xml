@@ -19,7 +19,7 @@
         </activity>
         <activity android:name=".activities.RegistroActivity" />
         <activity android:name=".activities.MainActivity" />
-        <activity android:name=".activities.PersonajesActivity" />
+        <activity android:name=".activities.PersonajeActivity" />
         <activity android:name=".activities.ObjetosActivity" />
         <activity android:name=".activities.TipActivity" />
         <activity android:name=".activities.CambioDatosActivity"></activity>

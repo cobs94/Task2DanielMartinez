@@ -1,16 +1,14 @@
 package com.danielmartinez.task2danielmartinez.activities;
 
 import android.content.Intent;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.danielmartinez.task2danielmartinez.R;
-import com.danielmartinez.task2danielmartinez.bean.TipsBean;
+import com.danielmartinez.task2danielmartinez.bean.TipBean;
 
 public class TipActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -29,7 +27,7 @@ public class TipActivity extends AppCompatActivity implements View.OnClickListen
 
         Intent intent = getIntent();
 
-        TipsBean tipsBean = (TipsBean) intent.getSerializableExtra("TIPS_KEY");
+        TipBean tipsBean = (TipBean) intent.getSerializableExtra("TIPS_KEY");
 
         txtNombreTip.setText(tipsBean.getNombre());
         txtDescripcionTip.setText(tipsBean.getDescripcion());

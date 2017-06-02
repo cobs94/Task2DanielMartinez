@@ -12,12 +12,9 @@ import android.widget.ListView;
 import com.danielmartinez.task2danielmartinez.Adapter.TipsAdapter;
 import com.danielmartinez.task2danielmartinez.R;
 import com.danielmartinez.task2danielmartinez.activities.TipActivity;
-import com.danielmartinez.task2danielmartinez.bean.PersonajesBean;
-import com.danielmartinez.task2danielmartinez.bean.TipsBean;
+import com.danielmartinez.task2danielmartinez.bean.TipBean;
 
 import java.util.ArrayList;
-
-import static com.danielmartinez.task2danielmartinez.R.string.personajes;
 
 public class TipsFragment extends Fragment implements AdapterView.OnItemClickListener {
 
@@ -26,7 +23,7 @@ public class TipsFragment extends Fragment implements AdapterView.OnItemClickLis
     }
 
 
-    private ArrayList<TipsBean> tips;
+    private ArrayList<TipBean> tips;
     private ListView lstTips;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,14 +41,14 @@ public class TipsFragment extends Fragment implements AdapterView.OnItemClickLis
         lstTips.setOnItemClickListener(this);
 
 
-        tips.add(new TipsBean("Calcula cuando cojer los power up para que no te golpeen al cogerlos", "Tip 1"));
-        tips.add(new TipsBean("Golpea al Boss final cuando se le abran las escotillas", "Tip 2"));
+        tips.add(new TipBean("Calcula cuando cojer los power up para que no te golpeen al cogerlos", "Tip 1"));
+        tips.add(new TipBean("Golpea al Boss final cuando se le abran las escotillas", "Tip 2"));
         return rootView;
     }
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int posicion, long l) {
-        TipsBean tipsBean = tips.get(posicion);
+        TipBean tipsBean = tips.get(posicion);
 
         Intent intent = new Intent(getActivity(), TipActivity.class);
         intent.putExtra("TIPS_KEY", tipsBean);

@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.danielmartinez.task2danielmartinez.R;
-import com.danielmartinez.task2danielmartinez.bean.ObjetosBean;
+import com.danielmartinez.task2danielmartinez.bean.ObjetoBean;
 
 public class ObjetosActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -31,7 +31,7 @@ public class ObjetosActivity extends AppCompatActivity implements View.OnClickLi
 
         Intent intent = getIntent();
 
-        ObjetosBean objetoBean = (ObjetosBean) intent.getSerializableExtra("OBJETO_KEY");
+        ObjetoBean objetoBean = (ObjetoBean) intent.getSerializableExtra("OBJETO_KEY");
 
         txtNombre.setText(objetoBean.getNombre());
         txtDescripcion.setText(objetoBean.getDescripcion());
